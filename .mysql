@@ -1,0 +1,16 @@
+create database my_database;
+use my_database;
+
+create table users (
+    id int not null auto_increment primary key,
+    name varchar(255) not null
+    email varchar(255) not null
+    password varchar(255) not null
+    create_at timestamp default_timestamp
+
+    INSERT INTO users (name, email, password) VALUES
+    ('john', 'john@example.com', '1234'),
+    ('joe', 'joe@example.com', 'hashed_password),
+    ('doe', 'doe@email.com', 'hashed_password'),
+
+SELECT * FROM users WHERE create_at > '2025-01-01';
