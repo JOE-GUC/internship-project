@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JoeTech - Innovative Tech Consulting</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <i class="fas fa-cube"></i>
+          JoeTech
+        </a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Transform Your Business with Technology</h1>
+        <p>
+          We help businesses leverage cutting-edge technology to drive growth
+          and innovation in the digital age.
+        </p>
+        <button class="cta-button" onclick="scrollToContact()">
+          Get Started
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>
+          Discover how we can help transform your business with our
+          comprehensive solutions
+        </p>
+      </div>
+      <div class="features-container">
+        <div class="feature-block">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Digital Strategy</h3>
+          <p>
+            Develop comprehensive digital strategies tailored to your business
+            needs and market demands.
+          </p>
+        </div>
+        <div class="feature-block">
+          <div class="feature-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud Solutions</h3>
+          <p>
+            Leverage cloud technology to scale your business efficiently and
+            securely in the digital world.
+          </p>
+        </div>
+        <div class="feature-block">
+          <div class="feature-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>AI Integration</h3>
+          <p>
+            Implement cutting-edge AI solutions to automate and optimize your
+            business processes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="section-title">
+        <h2>What Our Clients Say</h2>
+        <p>
+          Don't just take our word for it - hear from some of our satisfied
+          clients
+        </p>
+      </div>
+      <div class="testimonials-grid"></div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our services</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            How long does digital transformation typically take?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            The timeline varies depending on your organization's size and needs.
+            Typically, initial implementation takes 3-6 months, with ongoing
+            optimization and support thereafter.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            What industries do you specialize in?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            We work across various industries including healthcare, finance,
+            retail, and manufacturing. Our solutions are customized to meet
+            industry-specific requirements and challenges.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            How do you ensure data security?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            We implement industry-leading security measures including
+            encryption, regular security audits, and compliance with
+            international data protection standards like GDPR and HIPAA.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            What support do you provide after implementation?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            We offer 24/7 technical support, regular maintenance updates, and
+            continuous optimization services to ensure your systems run smoothly
+            and efficiently.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-title">
+        <h2>Get in Touch</h2>
+        <p>Ready to start your digital transformation? Contact us today!</p>
+      </div>
+      <form class="contact-form" onsubmit="return validateForm(event)">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Name</label>
+          <input type="text" id="name" name="name" required />
+          <div class="error-message" id="name-error">
+            Please enter your name
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error-message" id="email-error">
+            Please enter a valid email
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment"></i> Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <div class="error-message" id="message-error">
+            Please enter your message
+          </div>
+        </div>
+        <button type="submit" class="cta-button">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            JoeTech helps businesses transform through innovative technology
+            solutions and digital strategies.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-phone"></i> (+237) 6 53 95 61 70</li>
+            <li><i class="fas fa-envelope"></i> joedev237@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 JoeTech. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
