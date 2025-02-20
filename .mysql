@@ -1,16 +1,17 @@
-create database my_database;
-use my_database;
+CREATE DATABASE my_database;
+USE my_database;
 
-create table users (
-    id int not null auto_increment primary key,
-    name varchar(255) not null
-    email varchar(255) not null
-    password varchar(255) not null
-    create_at timestamp default_timestamp
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-    INSERT INTO users (name, email, password) VALUES
-    ('john', 'john@example.com', '1234'),
-    ('joe', 'joe@example.com', 'hashed_password),
-    ('doe', 'doe@email.com', 'hashed_password'),
+INSERT INTO users (name, email, password) VALUES
+    ('john', 'john@example.com', 'hashed_password'),
+    ('joe', 'joe@example.com', 'hashed_password'),
+    ('doe', 'doe@email.com', 'hashed_password');
 
-SELECT * FROM users WHERE create_at > '2025-01-01';
+SELECT * FROM users WHERE created_at > '2025-01-01';

@@ -1,23 +1,39 @@
-// quetion one:
-// output of console.log (count) after 5 seconds?
-// *Error: count is not defined
-// *count is declared inside createCounter(), so it is not accessible globally
+// ==================================
+// Question 1
+// ==================================
+// Output after 5 seconds:
+// The code will throw a ReferenceError: count is not defined
+// This happens because count is declared inside createCounter function and isn't accessible in the global scope
+// ==================================
+// Question 2
+// ==================================
+// JavaScript traps/bugs in the code:
+// Variable count is not initialized (it's undefined)
+// When undefined is incremented, it becomes NaN
+// The count variable is not properly scoped (it's using var)
+// There's no way to stop the interval (memory leak)
+// The count variable is trying to be accessed from outside its scope
 
-// Question two:
-// *Issue: count is declared using var inside createCounter(), making it a function scoped variable
-// *Problem: the setTimeout function tries to access count from the global scope which is does not exist
-
-
-// we can use closure to keep count inside countCounter()
-function countCounter() {
+function createCounter() {
     let count = 0;
-    setInterval (() => {
-count ++;
-console.log (count);
+    
+    const intervalId = setInterval(function() {
+        count++;
+        console.log('Counter:', count);
     }, 1000);
-    return function () {
-        return count;
+    
+    return {
+        getCount: function() {
+            return count;
+        },
+        stopCounter: function() {
+            clearInterval(intervalId);
+        }
     };
 }
 
-const counter = createCounter ();
+const counter = createCounter();
+setTimeout(function() {
+    console.log('After 5 seconds, count is:', counter.getCount());
+    counter.stopCounter(); 
+}, 5000);
